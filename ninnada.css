@@ -1,0 +1,606 @@
+/* ninnada.css */
+/* Update your hero background color */
+body{background-color: #0f172a;}
+
+/* Glassmorphism Navigation */
+nav {
+    position: fixed; /* Keep it at the top while scrolling */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1.2rem 2rem;
+    
+    /* Transparent background with a blur effect */
+    background: rgba(15, 23, 42, 0.2); 
+    backdrop-filter: blur(10px); /* Blurs the image behind the nav */
+    -webkit-backdrop-filter: blur(10px);
+    
+    /* Thin border for a premium feel */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Aligning the menu */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* Wider spacing for a cleaner look */
+}
+
+/* Professional White Links */
+nav ul li a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8); /* Soft white */
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 1px; /* Modern spacing */
+    text-transform: uppercase; /* Professional look */
+    transition: all 0.3s ease;
+    padding: 5px 0;
+}
+
+/* Hover Effect: Glow to match your Hero section */
+nav ul li a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(0, 123, 255, 0.8); /* Subtle blue glow */
+}
+
+/* Active Link Indicator */
+nav ul li a:hover::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #007bff;
+    margin-top: 5px;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+
+
+
+#hero {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), /* Slightly darker overlay */
+        url("ninnada.jpeg");
+    background-size: cover;
+    background-position: center; /* Ensures image stays centered */
+    background-attachment: fixed;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;/* Ensures the glow effect doesn't overflow */
+    border-radius: 30px; 
+   ; 
+   overflow: hidden;
+
+}
+
+/* Enhanced Glow Layer */
+#hero::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 600px; /* Specific width for a focused glow */
+    height: 600px; /* Specific height */
+    /* Increased opacity (0.4) and a wider spread */
+    background: radial-gradient(circle, rgba(0, 123, 255, 0.4) 0%, rgba(0, 123, 255, 0) 70%);
+    z-index: 1;
+    border-radius: 50%; /* Makes the radial gradient perfect */
+    filter: blur(40px); /* Softens the edges of the glow */
+    animation: pulse-glow 5s ease-in-out infinite;
+}
+
+#hero h2, #hero h3, #hero .btn {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 20px;
+    max-width: 800px; /* Prevents text from stretching too wide */
+}
+
+/* Smooth Animation */
+@keyframes pulse-glow {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.6;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.3);
+        opacity: 0.9;
+    }
+}
+.btn-ninnada-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    color: white;
+    text-decoration: none;
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: none;
+    box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
+    position: relative;
+    z-index: 10;
+}
+
+.btn-ninnada-whatsapp:hover {
+    transform: scale(1.05) translateY(-3px);
+    color: #fff;
+    box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4), 
+                0 0 20px rgba(0, 123, 255, 0.3);
+    filter: brightness(1.1);
+}
+
+.whatsapp-icon {
+    background: rgba(255, 255, 255, 0.2);
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: transform 0.4s ease;
+}
+
+.btn-ninnada-whatsapp:hover .whatsapp-icon {
+    transform: rotate(360deg);
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Pulse animation to grab attention */
+.btn-ninnada-whatsapp::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50px;
+    border: 2px solid #25D366;
+    animation: pulse-border 2s infinite;
+    z-index: -1;
+}
+
+@keyframes pulse-border {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(1.2); opacity: 0; }
+}
+/* Brand Branding Group */
+.brand-container {
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 2;
+}
+
+.brand-main {
+    font-size: 5rem; /* ගොඩක් ලොකුවට පේන්න */
+    font-weight: 900;
+    letter-spacing: 8px;
+    margin: 0;
+    color: #ffffff;
+    line-height: 1;
+    /* Blue glow effect for the name */
+    text-shadow: 0 0 20px rgba(0, 123, 255, 0.6), 
+                 0 0 40px rgba(0, 123, 255, 0.3);
+    font-family: 'Inter', sans-serif;
+}
+
+.brand-sub {
+    display: block;
+    font-size: 1rem;
+    letter-spacing: 5px;
+    color: #007bff; /* Theme Blue */
+    font-weight: 600;
+    margin-top: 5px;
+    text-transform: uppercase;
+}
+
+/* Secondary Headline */
+#hero h2 {
+    font-size: 2.2rem; /* මේක නමට වඩා කුඩා කළා නම කැපී පේන්න */
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #cbd5e1;
+    opacity: 0.9;
+}
+
+/* Mobile Responsiveness (Phone එකෙන් බලද්දී නම කැඩෙන්නේ නැති වෙන්න) */
+@media (max-width: 768px) {
+    .brand-main {
+        font-size: 3rem;
+        letter-spacing: 4px;
+    }
+    
+    #hero h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* About Section */
+
+
+.Section-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   color: #ffffff; /* Bright white for the headline */
+   text-align: center;
+}
+/* 1. The Parent Container (Now targeting #about) */
+#Services {
+   
+    color: #cbd5e1; 
+    padding: 80px 20px;
+    text-align: center;
+    
+    /* These properties center the cards inside */
+    display: flex;
+    flex-direction: column; /* Stack Title on top of cards */
+    align-items: center;    /* Center everything horizontally */
+}
+
+/* 2. A wrapper for just the cards (to keep them in a row/wrap) */
+.services-wrapper {
+    display: flex;
+    flex-wrap: wrap;       /* Allows cards to go to next line */
+    justify-content: center; /* Centers the cards in the middle */
+    gap: 20px;             /* Space between cards */
+    max-width: 1200px;     /* Prevents it from getting too wide */
+    margin-top: 40px;      /* Space below "Our Services" title */
+}
+
+/* 3. The Individual Card */
+.card {
+    background: rgba(255, 255, 255, 0.03); 
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    border-radius: 12px;
+    padding: 25px;
+    transition: all 0.3s ease;
+    text-align: center;    
+    width: 280px;          
+    flex-grow: 0;          
+}
+
+.card:hover {
+    background: rgba(0, 123, 255, 0.1); 
+    border-color: #007bff;
+    transform: translateY(-5px);
+}
+
+
+.icon {
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+.card h4 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.card h5 {
+    color: #a0aec0; 
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+
+/* About Section Styles */
+#about {
+    padding: 100px 20px;
+    background-color: #0f172a; /* Hero background එකට සමානයි */
+    color: #cbd5e1; /* Soft slate color for readability */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 850px;
+    margin: 0 auto;
+    color: #94a3b8; /* Lighter slate text */
+    font-family: 'Inter', sans-serif;
+}
+
+.about-text strong {
+    color: #ffffff; /* Highlight names and locations in white */
+    font-weight: 600;
+}
+
+/* Glow Divider to match your theme */
+.about-divider {
+    margin-top: 40px;
+    width: 120px;
+    height: 3px;
+    background: #007bff;
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.8); /* Blue glow effect */
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Section title custom color if needed */
+#about .Section-title {
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    margin-bottom: 30px;
+}
+
+
+
+
+
+/* Pricing Section Styles */
+#pricing {
+    background-color: #0f172a;
+    padding: 100px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pricing-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    width: 100%;
+    margin-top: 40px;
+    align-items: stretch; /* මෙය කාඩ් තුනම එකම උසකට (Height) ගෙන එයි */
+}
+
+.pricing-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px 30px;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    position: relative;
+}
+
+/* Hover Effect - Blue Glow */
+.pricing-card:hover {
+    transform: translateY(-10px);
+    border-color: #007bff;
+    box-shadow: 0 10px 30px rgba(0, 123, 255, 0.2);
+    background: rgba(0, 123, 255, 0.05);
+}
+
+/* Popular Package Highlight */
+.pricing-card.popular {
+    border-color: #007bff;
+    background: rgba(0, 123, 255, 0.08);
+}
+
+.badge {
+    background: #007bff;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.package-header h3 {
+    color: #ffffff;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+.price {
+    font-size: 2.2rem;
+    color: #007bff;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.price span {
+    font-size: 1rem;
+    color: #94a3b8;
+}
+
+.pricing-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+    text-align: left;
+    flex-grow: 1; /* List එක දිග වුණත් Button එක පතුලටම තල්ලු කරයි */
+}
+
+.pricing-card ul li {
+    color: #cbd5e1;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    position: relative;
+    padding-left: 25px;
+}
+
+/* Checkmark icon using CSS */
+.pricing-card ul li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.pricing-btn {
+    display: block;
+    text-decoration: none;
+    background: #007bff;
+    color: white;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.pricing-btn:hover {
+    background: #0056b3;
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
+}
+
+
+
+
+/* Portfolio Styling */
+.portfolio-card {
+    background: #111; /* Dark background to match studio theme */
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid #333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 86, 179, 0.4); /* Blue-ish glow */
+    border-color: #0056b3;
+}
+
+.video-container {
+    border-bottom: 3px solid #0056b3; /* Blue highlight line */
+}
+
+.portfolio-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.category-tag {
+    display: inline-block;
+    background: rgba(0, 86, 179, 0.2);
+    color: #00a2ff; /* Bright Blue for visibility */
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    border: 1px solid #0056b3;
+}
+
+.portfolio-info h4 {
+    color: #fff;
+    font-size: 1.25rem;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+/* Section Title styling if not already defined */
+.Section-title {
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 2px solid #0056b3;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.gallery-item {
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid #333;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover {
+    border-color: #0056b3;
+    box-shadow: 0 0 15px rgba(0, 86, 179, 0.5);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Modal එක ඇතුළේ image එකේ background එක dark කරන්න */
+#imageModal .modal-content {
+    background-color: transparent;
+}
+
+
+
+
+
+/* Footer Special Styling */
+.social-icon {
+    display: inline-block;
+    padding: 8px 20px;
+    background: rgba(0, 123, 255, 0.1);
+    color: #007bff;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-right: 10px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background: #007bff;
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
+    transform: translateY(-3px);
+}
+
+.contact-info a:hover {
+    color: #007bff !important;
+    text-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
+}
+
+/* Ensure footer links align with theme */
+#footer a {
+    transition: color 0.3s ease;
+}
+
+#footer a:hover {
+    color: #ffffff !important;
+}
